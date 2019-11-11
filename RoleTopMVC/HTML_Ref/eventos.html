@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top - Espaço de eventos, festas e casamentos</title>
+    <link href="img/logo_roletop.png" rel="icon" type="image"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style-eventos.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body class="flex-container">
+    <header>
+        <nav>
+            <div class="section-container">
+                <img src="img/logo_roletop.png" alt="Logo Rolê Top" title="Logo Rolê Top">
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="index.html" class="active">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="eventos.html">Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="servicos.html">Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="fotos.html">Fotos</a></li>
+                    <li><a id="bt-faca_sua_reserva" href="contato.html">Faça sua reserva!</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    <main>
+        
+        <div class="eventos">
+            <div class="evento1">
+                <h2><strong>Show do Grupo Revelação</strong></h2>
+                <h3>17 AGO 2019</h3>
+                <p>Sáb - 22:00</p>
+                <p>Venha curtir o show do grupo de pagode mais querido do Brasil.</p>
+            </div>
+            <div class="evento2">
+                <h2><strong>Evento - Empresa Bradesco</strong></h2>
+                <h3>23 AGO 2019</h3>
+                <p>Sex - 18:00</p>
+                <p>Confraternização do Banco Bradesco por atingir os resultados trimestrais.</p>
+            </div>
+            <div class="evento3">
+                <h2><strong>Festa Kids</strong></h2>
+                <h3>7 SET 2019</h3>
+                <p>Sáb - 12:00</p>
+                <p>Festa dedicada as crianças, com muitas brincadeiras, gincanas e comidas.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="section-container">
+            <address>
+                Alameda Barão de Limeira, 539 - Santa Cecília, São Paulo - SP
+            </address>
+            <a href="duvidas.html">Dúvidas Frequentes</a>
+            <a href="#">Voltar para o topo!</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-bolt");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-bolt");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+        
+    </script>
+</body>

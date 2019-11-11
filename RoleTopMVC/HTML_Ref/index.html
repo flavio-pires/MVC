@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top - Espaço de eventos, festas e casamentos</title>
+    <link href="img/logo_roletop.png" rel="icon" type="image"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="section-container">
+                <img src="img/logo_roletop.png" alt="Logo Rolê Top" title="Logo Rolê Top">
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="index.html">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="eventos.html">Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="servicos.html">Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="fotos.html">Fotos</a></li>
+                    <li><a id="bt-faca_sua_reserva" href="contato.html">Faça sua reserva!</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="fundo-galpao">
+            <h1>Rolê Top</h1>
+        </section>
+    </header>
+    <main>
+        <section id="historia">
+            <div class="section-container">
+                <div class="flex-group">
+                    <h2><strong><em>Sobre</em></strong></h2>
+                    <em>
+                        <p>
+                            Localizado na Santa Cecília, região central de São Paulo, o Rolê Top já está no mercado desde
+                            2015, com
+                            capacidade máxima de 400 pessoas, possui uma infra-estrutura completa para o seu evento,
+                            incluindo ambiente
+                            climatizado, banheiros (masculino e feminino), saídas de emergência, camarins, catracas, acessos
+                            para
+                            deficientes, câmeras de segurança e estacionamento no local.
+                        </p><br>
+                        <p>
+                            O Rolê Top é o espaço de eventos que mais cresce em São Paulo, com a proposta de oferecer um
+                            local acessível
+                            para eventos corporativos, casamentos, aniversários, shows, desfiles, cerimônias, mostras de
+                            cinema, festas
+                            temáticas e outros tipos de eventos.
+                        </p><br>
+                        <p>
+                            Entre em contato e veja como o Rolê Top torna o seu evento único, esperamos por você!
+                        </p><br>
+                        <h2><strong><em>A história</em></strong></h2>
+                        <h3><em>de um espaço de eventos</em></h3><br>
+                        <p>
+                            Os sócios Cesar Sportore e Alexandre Fukaya foram os percussores na realização de eventos
+                            fechados, onde o
+                            cliente customiza sua festa.
+                        </p><br>
+                        <p>
+                            Eles também são donos de uma hamburgueria e sempre conversando com seus clientes escutavam que
+                            faltava um
+                            local na região que realizasse eventos de todos os tipos e foi ai que tiveram a ideia de comprar
+                            um galpão
+                            e preparar o espaço para receber qualquer evento desde festas, formaturas, aniversários, casamentos,
+                            cerimônias, etc.
+                        </p>
+                    </em>
+                </div>
+            </div>
+        </section>
+
+        <section id="infra">
+                <div class="section-container">
+                    <div class="infra-list">
+                        <h2>Infraestrutura</h2>
+                        <ul>
+                            <li>Área Total: 150 x 40 m</li>
+                            <li>Capacidade máxima: 400 pessoas</li>
+                            <li>Máximo de 120 mesas</li>
+                            <li>Ambiente climatizado</li>
+                            <li>Camarins</li>
+                            <li>Acesso para deficientes</li>
+                            <li>Câmeras de segurança</li>
+                            <li>Estacionamento no local</li>
+                        </ul>
+                    </div>
+                    <img src="img/planta.jpg" alt="Planta do galpão" title="Planta do galpão" />
+                </div>
+            </section>
+
+        <section id="local">
+            <div class="section-container">
+                <h3>Endereço</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.8869961505543!2d-46.648477085071065!3d-23.53656648469522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5843deade6e3%3A0x124f377d06c7e71f!2sAlameda+Bar%C3%A3o+de+Limeira%2C+539+-+Campos+El%C3%ADseos%2C+S%C3%A3o+Paulo+-+SP%2C+01202-001!5e0!3m2!1sen!2sbr!4v1550223658410"
+                    width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="section-container">
+            <address>
+                Alameda Barão de Limeira, 539 - Santa Cecília, São Paulo - SP
+            </address>
+            <a href="duvidas.html">Dúvidas Frequentes</a>
+            <a href="#">Voltar para o topo!</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-bolt");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-bolt");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+        
+    </script>
+</body>
+
+</html>

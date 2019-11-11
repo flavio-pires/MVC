@@ -1,0 +1,47 @@
+html {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    align-self: center;
+    padding: 8em;
+    height: 100%;
+    background-image: url(../img/fundo-eventos.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.eventos {
+    color: #fff;
+}
+
+.evento1 {
+    padding: 1.2em;
+    font-size: 1.3em;
+}
+
+.evento2 {
+    padding: 1.2em;
+    font-size: 1.3em;
+}
+
+.evento3 {
+    padding: 1.2em;
+    font-size: 1.3em;
+}
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top - Espaço de eventos, festas e casamentos</title>
+    <link href="img/logo_roletop.png" rel="icon" type="image"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/style-form-pages.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="section-container">
+                <img src="img/logo_roletop.png" alt="Logo Rolê Top" title="Logo Rolê Top">
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="index.html" class="active">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="eventos.html">Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="servicos.html">Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="fotos.html">Fotos</a></li>
+                    <li><a id="bt-faca_sua_reserva" href="contato.html">Faça sua reserva!</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    <main>
+        <div id="reserva">
+            <div class="login">
+                <h2><u>Login</u></h2>
+                <form method="GET" action="contato.html">
+                    <div>
+                        <label for="email">E-mail</label>
+                        <br>
+                        <input id="email" type="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Senha</label>
+                        <br>
+                        <input type="password" required>
+                    </div>
+                    <input type="submit" value="Entrar">
+                </form>
+            </div>
+            <div class="cadastro">
+                <h2><u>Cadastro</u></h2>
+                <form method="GET" action="contato.html">
+                    <div>
+                        <label for="email">E-mail</label>
+                        <br>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Senha</label>
+                        <br>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div>
+                        <label for="nome">Nome</label>
+                        <br>
+                        <input type="text" id="text">
+                    </div>
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <br>
+                        <input type="number" id="number">
+                    </div>
+                    <div>
+                        <label for="telefone">Telefone</label>
+                        <br>
+                        <input type="number" id="telefone">
+                    </div>
+                    <div>
+                        <label for="nome_evento">Nome do Evento</label>
+                        <br>
+                        <input type="text" id="nome_evento">
+                    </div>
+                    <div>
+                        <label for="data_evento">Data do Evento</label>
+                        <br>
+                        <input type="date" id="data_evento">
+                    </div>
+                    <div>
+                        <label for="quantidade">Quantidade de Pessoas</label>
+                        <br>
+                        <input type="number" id="quantidade">
+                    </div>
+                    <div>
+                        <label for="tipo_evento">Tipo de Evento</label>
+                        <br>
+                        <input type="checkbox" value="Público"> Público
+                        <input type="checkbox" value="Privado"> Privado
+                    </div><br>
+                    <div>
+                        <input type="checkbox" value="Iluminação"> Contratar serviço de iluminação
+                        <input type="checkbox" value="Som"> Contratar serviço de som
+                    </div><br>
+                    <div>
+                        <label for="descrição">Observações/Descrição do evento</label>
+                        <br>
+                        <input type="area" id="descrição">
+                    </div><br>
+                    <div id="pagamento">
+                        <p>Formas de Pagamento</p>
+                        <p>Cartão de Crédito</p>
+                        <p>Boleto Bancário</p>
+                        <p>Transferência</p>
+                    </div><br>
+                    <div>
+                        <input type="checkbox" value="termos"> Aceito os termos e condições de uso
+                    </div><br>
+                    <p>Valor inicial do aluguel do espaço - R$ 10.000,00</p><br>
+                    <input type="submit" value="Enviar" />
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="section-container">
+            <address>
+                Alameda Barão de Limeira, 539 - Santa Cecília, São Paulo - SP
+            </address>
+            <a href="duvidas.html">Dúvidas Frequentes</a>
+            <a href="#">Voltar para o topo!</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+
+            ul.classList.toggle("mobile-mode");
+
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+
+                icon.classList.add("fas");
+                icon.classList.add("fa-bolt");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-bolt");
+
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+
+        }
+        
+    </script>
+</body>

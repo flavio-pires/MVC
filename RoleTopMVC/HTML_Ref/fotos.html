@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rolê Top - Espaço de eventos, festas e casamentos</title>
+    <link href="img/logo_roletop.png" rel="icon" type="image"/>
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/349a64cb04.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="section-container">
+                <img src="img/logo_roletop.png" alt="Logo Rolê Top" title="Logo Rolê Top">
+                <ul>
+                    <li id="bt-mobile-menu">
+                        <a href="javascript:void(0);" class="icon" onclick="toggleMobileMenu()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="index.html" class="active">Home</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="eventos.html">Eventos</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="servicos.html">Serviços</a></li>
+                    <li class="bt-common-menu"><a onclick="toggleMobileMenu()" href="fotos.html">Fotos</a></li>
+                    <li><a id="bt-faca_sua_reserva" href="contato.html">Faça sua reserva!</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <main>
+            <section id="eventos">
+                <h2><strong><u>Eventos Corporativos</u></strong></h2>
+                <ul id="imgs">
+                    <li><a href="#ev-corp1"><img src="img/eventos_corporativos/1.jpg" alt="Evento empresa Vigor" class="min"></a></li>
+                    <li><a href="#ev-corp2"><img src="img/eventos_corporativos/2.jpg" alt="Evento empresa Gurlo" class="min"></a></li>
+                    <li><a href="#ev-corp3"><img src="img/eventos_corporativos/3.jpg" alt="Evento empresa Bradesco" class="min"></a></li>
+                    <li><a href="#ev-corp4"><img src="img/eventos_corporativos/4.jpg" alt="Evento empresa Roca" class="min"></a></li>
+                </ul>
+                
+                <div class="lbox" id="ev-corp1">
+                    <div class="box-img">
+                        <a href="#ev-corp4" class="btn" id="prev">&#171;</a>
+                        <a href="" class="btn" id="close">X</a>
+                        <img src="img/eventos_corporativos/1.jpg" alt="Evento empresa Vigor">
+                        <a href="#ev-corp2" class="btn" id="next">&#187;</a>
+                    </div>
+                </div>
+
+                <div class="lbox" id="ev-corp2">
+                    <div class="box-img">
+                        <a href="#ev-corp1" class="btn" id="prev">&#171;</a>
+                        <a href="" class="btn" id="close">X</a>
+                        <img src="img/eventos_corporativos/2.jpg" alt="Evento empresa Gurlo">
+                        <a href="#ev-corp3" class="btn" id="next">&#187;</a>
+                    </div>
+                </div>
+
+                <div class="lbox" id="ev-corp3">
+                    <div class="box-img">
+                        <a href="#ev-corp2" class="btn" id="prev">&#171;</a>
+                        <a href="" class="btn" id="close">X</a>
+                        <img src="img/eventos_corporativos/3.jpg" alt="Evento empresa Bradesco">
+                        <a href="#ev-corp4" class="btn" id="next">&#187;</a>
+                    </div>
+                </div>
+
+                <div class="lbox" id="ev-corp4">
+                    <div class="box-img">
+                        <a href="#ev-corp3" class="btn" id="prev">&#171;</a>
+                        <a href="" class="btn" id="close">X</a>
+                        <img src="img/eventos_corporativos/4.jpg" alt="Evento empresa Roca">
+                        <a href="#ev-corp1" class="btn" id="next">&#187;</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="festas">
+                    <h2><strong><u>Festas e Shows</u></strong></h2>
+                    <ul id="imgs">
+                        <li><a href="#festa1"><img src="img/Festas_shows/1.jpeg" alt="Festa" class="min"></a></li>
+                        <li><a href="#festa2"><img src="img/Festas_shows/2.jpg" alt="Balada" class="min"></a></li>
+                        <li><a href="#festa3"><img src="img/Festas_shows/3.jpg" alt="Show do Grupo Revelação" class="min"></a></li>
+                        <li><a href="#festa4"><img src="img/Festas_shows/4.jpg" alt="Show" class="min"></a></li>
+                    </ul>
+                    
+                    <div class="lbox" id="festa1">
+                        <div class="box-img">
+                            <a href="#festa4" class="btn" id="prev">&#171;</a>
+                            <a href="" class="btn" id="close">X</a>
+                            <img src="img/Festas_shows/1.jpeg" alt="Festa">
+                            <a href="#festa2" class="btn" id="next">&#187;</a>
+                        </div>
+                    </div>
+    
+                    <div class="lbox" id="festa2">
+                        <div class="box-img">
+                            <a href="#festa1" class="btn" id="prev">&#171;</a>
+                            <a href="" class="btn" id="close">X</a>
+                            <img src="img/Festas_shows/2.jpg" alt="Balada">
+                            <a href="#festa3" class="btn" id="next">&#187;</a>
+                        </div>
+                    </div>
+    
+                    <div class="lbox" id="festa3">
+                        <div class="box-img">
+                            <a href="#festa2" class="btn" id="prev">&#171;</a>
+                            <a href="" class="btn" id="close">X</a>
+                            <img src="img/Festas_shows/3.jpg" alt="Show do Grupo Revelação">
+                            <a href="#festa4" class="btn" id="next">&#187;</a>
+                        </div>
+                    </div>
+    
+                    <div class="lbox" id="festa4">
+                        <div class="box-img">
+                            <a href="#festa3" class="btn" id="prev">&#171;</a>
+                            <a href="" class="btn" id="close">X</a>
+                            <img src="img/Festas_shows/4.jpg" alt="Show">
+                            <a href="#festa1" class="btn" id="next">&#187;</a>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="formaturas">
+                        <h2><strong><u>Formaturas e Casamentos</u></strong></h2>
+                        <ul id="imgs">
+                            <li><a href="#format1"><img src="img/form_casa/1.jpg" alt="Festa de Formatura" class="min"></a></li>
+                            <li><a href="#format2"><img src="img/form_casa/2.jpg" alt="Festa de Formatura" class="min"></a></li>
+                            <li><a href="#format3"><img src="img/form_casa/3.jpg" alt="Festa de Casamento" class="min"></a></li>
+                            <li><a href="#format4"><img src="img/form_casa/4.jpg" alt="Festa de Casamento" class="min"></a></li>
+                        </ul>
+                        
+                        <div class="lbox" id="format1">
+                            <div class="box-img">
+                                <a href="#format4" class="btn" id="prev">&#171;</a>
+                                <a href="" class="btn" id="close">X</a>
+                                <img src="img/form_casa/1.jpg" alt="Festa de Formatura">
+                                <a href="#format2" class="btn" id="next">&#187;</a>
+                            </div>
+                        </div>
+        
+                        <div class="lbox" id="format2">
+                            <div class="box-img">
+                                <a href="#format1" class="btn" id="prev">&#171;</a>
+                                <a href="" class="btn" id="close">X</a>
+                                <img src="img/form_casa/2.jpg" alt="Festa de Formatura">
+                                <a href="#format3" class="btn" id="next">&#187;</a>
+                            </div>
+                        </div>
+        
+                        <div class="lbox" id="format3">
+                            <div class="box-img">
+                                <a href="#format2" class="btn" id="prev">&#171;</a>
+                                <a href="" class="btn" id="close">X</a>
+                                <img src="img/form_casa/3.jpg" alt="Festa de Casamento">
+                                <a href="#format4" class="btn" id="next">&#187;</a>
+                            </div>
+                        </div>
+        
+                        <div class="lbox" id="format4">
+                            <div class="box-img">
+                                <a href="#format3" class="btn" id="prev">&#171;</a>
+                                <a href="" class="btn" id="close">X</a>
+                                <img src="img/form_casa/4.jpg" alt="Festa de Casamento">
+                                <a href="#format1" class="btn" id="next">&#187;</a>
+                            </div>
+                        </div>
+                    </section>
+                            
+        </main>
+                    
+    <footer>
+        <div class="section-container">
+            <address>
+                Alameda Barão de Limeira, 539 - Santa Cecília, São Paulo - SP
+            </address>
+            <a href="duvidas.html">Dúvidas Frequentes</a>
+            <a href="#">Voltar para o topo!</a>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleMobileMenu() {
+            var ul = document.querySelector("nav ul");
+            var commonButtons = document.querySelectorAll("nav .bt-common-menu");
+            var icon = document.querySelector(".icon > i");
+            
+            ul.classList.toggle("mobile-mode");
+            
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.remove("fa-bars");
+                icon.classList.remove("fa");
+                
+                icon.classList.add("fas");
+                icon.classList.add("fa-bolt");
+            } else {
+                icon.classList.remove("fas");
+                icon.classList.remove("fa-bolt");
+                
+                icon.classList.add("fa");
+                icon.classList.add("fa-bars");
+            }
+            
+            for (var button of commonButtons) {
+                button.classList.toggle("active");
+            }
+            
+        }
+        
+    </script>
+</body>
