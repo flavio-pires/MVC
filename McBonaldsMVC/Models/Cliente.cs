@@ -3,7 +3,7 @@ using System;
 
 namespace McBonaldsMVC.Models
 {
-    public class Cliente
+    public class Cliente // modelos servem para representar um objeto do mundo real dentro do sistema... modelo descreve o que é um cliente para o sistema, descrevendo as caracteristicas e comportamentos
     {
         public string Nome {get;set;}
         public string Endereco {get;set;}

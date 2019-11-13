@@ -8,11 +8,11 @@ using McBonaldsMVC.Models;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : Controller // Controller é responsavel por receber as informações e retornar o caminho correto, de acordo com o que o usuário solicitou 
     {
         public IActionResult Index()
         {
-            ViewData["NomeView"] = "Home";
+            ViewData["NomeView"] = "Home"; //ViewData é uma variável genérica como um dicionário..
             return View();
         }
 

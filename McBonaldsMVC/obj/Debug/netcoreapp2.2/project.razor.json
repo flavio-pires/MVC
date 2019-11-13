@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\39221000826\\Documents\\Exercicios .net\\MVC\\McBonaldsMVC\\McBonaldsMVC.csproj",
+  "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\McBonaldsMVC\\McBonaldsMVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -3018,6 +3018,11 @@
     {
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Pedido\\Index.cshtml",
+      "TargetPath": "Views\\Pedido\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],
