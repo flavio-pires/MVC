@@ -25,7 +25,8 @@ namespace McBonaldsMVC.Controllers
             return View("Sucesso");
             } catch(Exception e)
             {
-                return View("Erro");
+                System.Console.WriteLine(e.StackTrace);
+                return View("Erro");                
             }
             
         }

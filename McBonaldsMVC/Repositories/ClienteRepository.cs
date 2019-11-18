@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using McBonaldsMVC.Models;
 
@@ -22,9 +23,56 @@ namespace McBonaldsMVC.Repositories
                 return true;
             }
 
+            public Cliente ObterPor(string email)
+            {
+                var linhas = File.ReadAllLines(PATH);
+                foreach(var linha in linhas)
+                {
+                    //Cliente c = new Cliente();
+                    //var dados = cliente.Split(";");
+                    //c.Nome= dados[0];
+                    //c.Email = dados[1];
+                    //c.Senha = dados[2];
+
+                    if(ExtrairValorDoCampo("email", linha).Equals(email)) // extrair o valor do campo email de cada linha... se o que extraiu for igual o que esta no campo email executa
+                    {
+                        Cliente c = new Cliente();
+                        c.Nome = ExtrairValorDoCampo("nome", linha);
+                        c.Email = ExtrairValorDoCampo("email", linha);
+                        c.Senha = ExtrairValorDoCampo("senha", linha);
+                        c.Endereco = ExtrairValorDoCampo("endereco", linha);
+                        c.Telefone = ExtrairValorDoCampo("telefone", linha);
+                        c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("dataNascimento", linha));
+
+                        return c;
+                    }                    
+                }
+                return null;
+            }
+
             private string PrepararRegistroCSV(Cliente cliente)
             {
                 return $"nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};endereco={cliente.Endereco};telefone={cliente.Telefone};data_nascimento={cliente.DataNascimento}";
+            }
+
+            public string ExtrairValorDoCampo(string nomeCampo, string linha)
+            {
+                var chave = nomeCampo;
+                var indiceChave = linha.IndexOf(chave); //Indexof encontra a posição da chave que foi indicada, no caso "email"
+                var indiceTerminal = linha.IndexOf(";",indiceChave);
+                var valor = "";
+
+                if(indiceTerminal != -1)
+                {
+                    valor = linha.Substring(indiceChave, indiceTerminal - indiceChave); //ignora a chave e pega o valor de string depois dela
+                }
+                else
+                {
+                    valor = linha.Substring(indiceChave);
+                }
+
+                System.Console.WriteLine($"Campo {nomeCampo} tem valor {valor}");
+                return valor.Replace(nomeCampo + "=", ""); // apaga o "email=" e substitui por nada
             }
     }
 }

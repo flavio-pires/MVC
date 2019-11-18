@@ -1,3 +1,4 @@
+@model McBonaldsMVC.ViewModels.PedidoViewModel
 <main>
         <h2>Pede aí, jovem!</h2>
         <form method="POST" action='@Url.Action("Registrar","Pedido")'> <!-- primeiro ação(método) depois o controller(classe) -->
@@ -30,16 +31,20 @@
                     <label for="hamburguer">Hamburguer</label>
                     <select id="hamburguer" name="hamburguer" required>
                         <option value="" disabled selected>Selecione</option>
-                        <option value="furioso">Furioso</option>
-                        <option value="combo">Combo</option>
+                        @foreach(var h in Model.Hamburgueres)
+                        {
+                            <option value=@h.Nome>@h.Nome por @h.Preco</option>
+                        }
                     </select>
                 </div>
                 <div>
                     <label for="shake">Shake</label>
                     <select id="shake" name="shake">
                         <option value="" disabled selected>Selecione</option>
-                        <option value="chocolate">Chocolate</option>
-                        <option value="biscoito">Biscoito</option>
+                        @foreach (var s in Model.Shakes)
+                        {
+                            <option value=@s.Nome>@s.Nome por @s.Preco</option>
+                        }
                     </select>
                 </div>
             </div>
