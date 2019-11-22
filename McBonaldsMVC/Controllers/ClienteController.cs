@@ -1,13 +1,17 @@
 using System;
 using McBonaldsMVC.Repositories;
+using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class ClienteController : Controller
+    public class ClienteController : AbstractController
     {
+        
         private ClienteRepository clienteRepository = new ClienteRepository();
+
+        private PedidoRepository pedidoRepository = new PedidoRepository();
 
         [HttpGet]
         public IActionResult Login()
@@ -29,9 +33,26 @@ namespace McBonaldsMVC.Controllers
             var usuario = form["email"];
             var senha = form["senha"];
 
-            clienteRepository.ObterPor(usuario);
+            var cliente = clienteRepository.ObterPor(usuario);
 
-            return View("Sucesso");
+            if (cliente != null)
+            {
+                if(cliente.Senha.Equals(senha))
+                {
+                    HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
+                    HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                    return RedirectToAction("Historico", "Cliente");
+                }
+                else
+                {
+                    return View("Erro", new RespostaViewModel("Senha incorreta"));
+                }
+            }
+            else
+            {
+                return View("Erro", new RespostaViewModel($"Usuário {usuario} não encontrado"));                
+            }
+
             }
             catch (Exception e)
             {
@@ -39,6 +60,17 @@ namespace McBonaldsMVC.Controllers
                 return View("Erro");
             }
             
+        }
+    
+        public IActionResult Historico()
+        {
+            var emailCliente = ObterUsuarioSession();
+            var pedidos = pedidoRepository.ObterTodosPorCliente(emailCliente);
+
+            return View(new HistoricoViewModel()
+            {
+                Pedidos = pedidos
+            });
         }
     }
 }

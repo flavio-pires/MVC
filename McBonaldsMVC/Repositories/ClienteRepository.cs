@@ -42,7 +42,7 @@ namespace McBonaldsMVC.Repositories
                         c.Senha = ExtrairValorDoCampo("senha", linha);
                         c.Endereco = ExtrairValorDoCampo("endereco", linha);
                         c.Telefone = ExtrairValorDoCampo("telefone", linha);
-                        c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("dataNascimento", linha));
+                        c.DataNascimento = DateTime.Parse(ExtrairValorDoCampo("data_nascimento", linha));
 
                         return c;
                     }                    

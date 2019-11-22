@@ -67,3 +67,4 @@ C:\Users\39221000826\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Vi
 C:\Users\39221000826\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderHomePage.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Pedido\Index.g.cshtml.cs
+C:\Users\39221000826\Documents\MVC\McBonaldsMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Historico.g.cshtml.cs
