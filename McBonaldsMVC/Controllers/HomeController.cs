@@ -5,15 +5,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using McBonaldsMVC.Models;
+using McBonaldsMVC.ViewModels;
 
 namespace McBonaldsMVC.Controllers
 {
-    public class HomeController : Controller // Controller é responsavel por receber as informações e retornar o caminho correto, de acordo com o que o usuário solicitou 
+    public class HomeController : AbstractController // Controller é responsavel por receber as informações e retornar o caminho correto, de acordo com o que o usuário solicitou 
     {
         public IActionResult Index()
         {
-            ViewData["NomeView"] = "Home"; //ViewData é uma variável genérica como um dicionário..
-            return View();
+            
+            return View(new BaseViewModel()
+            {
+                NomeView = "Home",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
+            });
         }
 
         public IActionResult Privacy()
