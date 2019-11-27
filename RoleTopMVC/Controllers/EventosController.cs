@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
@@ -6,7 +7,10 @@ namespace RoleTopMVC.Controllers
     {
         public IActionResult Shows()
         {
-            return View();
+            return View(new BaseViewModel()
+            {
+                NomeView = "Eventos"
+            });
         }
     }
 }

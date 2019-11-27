@@ -3,13 +3,13 @@ using RoleTopMVC.ViewModels;
 
 namespace RoleTopMVC.Controllers
 {
-    public class GaleriaController : Controller
+    public class ServicosController : Controller
     {
-        public IActionResult Fotos()
+        public IActionResult Trabalhos()
         {
             return View(new BaseViewModel()
             {
-                NomeView = "Galeria"
+                NomeView = "Servicos"
             });
         }
     }
