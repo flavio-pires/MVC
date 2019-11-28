@@ -18,6 +18,8 @@ namespace McBonaldsMVC.Repositories
 
         public bool Inserir(Pedido pedido)
             {
+                var quantidadeLinhas = File.ReadAllLines(PATH).Length;
+                pedido.Id = (ulong) ++quantidadeLinhas;
                 var linha = new string[] {PrepararRegistroCSV(pedido)};
                 File.AppendAllLines(PATH, linha);
 
@@ -32,6 +34,8 @@ namespace McBonaldsMVC.Repositories
                 {
                     Pedido pedido = new Pedido();
                     
+                    pedido.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
+                    pedido.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                     pedido.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
                     pedido.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco", linha);
                     pedido.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
@@ -62,12 +66,25 @@ namespace McBonaldsMVC.Repositories
                 return pedidosCliente;
             }
 
+            public Pedido ObterPor(ulong id) // método para obter o Id dos pedidos
+            {
+                var pedidosTotais = ObterTodos();
+                foreach (var pedido in pedidosTotais)
+                {
+                    if(pedido.Id == id) //condição para o banco verificar se o Id do pedido do cliente, encontra-se na tabela, para depois retornar o pedido com o status de aprovado, reprovado
+                    {
+                        return pedido;
+                    }
+                }
+                return null;
+            }
+
             private string PrepararRegistroCSV(Pedido pedido)
             {
                 Cliente cliente = pedido.Cliente;
                 Hamburguer hamburguer = pedido.Hamburguer;
                 Shake shake = pedido.Shake;
-                return $"cliente_nome={cliente.Nome};cliente_endereco={cliente.Endereco};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};hamburguer_nome={hamburguer.Nome};hamburguer_preco={hamburguer.Preco};shake_nome={shake.Nome};shake_preco={shake.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
+                return $"id={pedido.Id};status_pedido={pedido.Status};cliente_nome={cliente.Nome};cliente_endereco={cliente.Endereco};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};hamburguer_nome={hamburguer.Nome};hamburguer_preco={hamburguer.Preco};shake_nome={shake.Nome};shake_preco={shake.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
             }
 
     }
