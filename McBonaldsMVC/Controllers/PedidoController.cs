@@ -1,4 +1,5 @@
 using System;
+using McBonaldsMVC.Enums;
 using McBonaldsMVC.Models;
 using McBonaldsMVC.Repositories;
 using McBonaldsMVC.ViewModels;
@@ -90,6 +91,44 @@ namespace McBonaldsMVC.Controllers
         public IActionResult Aprovar(ulong id) 
         {
             Pedido pedido = pedidoRepository.ObterPor(id);
+            pedido.Status = (uint) StatusPedido.APROVADO;
+
+            if(pedidoRepository.Atualizar(id,pedido))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else
+            {
+                return View ("Erro", new RespostaViewModel()
+                {
+                    Mensagem = "Houve um erro ao aprovar seu pedido.",
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
         }
+
+        public IActionResult Reprovar(ulong id) 
+        {
+            Pedido pedido = pedidoRepository.ObterPor(id);
+            pedido.Status = (uint) StatusPedido.REPROVADO;
+
+            if(pedidoRepository.Atualizar(id,pedido))
+            {
+                return RedirectToAction("Dashboard", "Administrador");
+            }
+            else
+            {
+                return View ("Erro", new RespostaViewModel()
+                {
+                    Mensagem = "Houve um erro ao reprovar seu pedido.",
+                    NomeView = "Dashboard",
+                    UsuarioEmail = ObterUsuarioSession(),
+                    UsuarioNome = ObterUsuarioNomeSession()
+                });
+            }
+        }
+        
     }
 }

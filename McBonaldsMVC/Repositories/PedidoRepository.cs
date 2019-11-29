@@ -79,6 +79,33 @@ namespace McBonaldsMVC.Repositories
                 return null;
             }
 
+            public bool Atualizar(ulong id, Pedido pedido)
+            {
+                var pedidosTotais = File.ReadAllLines(PATH); // recolhe tudo que esta na tabela de pedidos
+                var pedidoCSV = PrepararRegistroCSV(pedido); // transforma o pedido atualizado em string para ser gravado no CSV
+                var linhaPedido = -1; // porque não haverá linha -1.. serve apenas para atualizar
+                var resultado = false;
+
+                for (int i=0; i < pedidosTotais.Length; i++)
+                {
+                    var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", pedidosTotais[i]));
+                    if(pedido.Id.Equals(idConvertido))  // se o ID do pedido que foi enviado para atualizar for igual a linha com o ID igual ele vai atualizar o status
+                    {
+                        linhaPedido = i;
+                        resultado = true;
+                        break;
+                    }
+                }
+
+                if (resultado)
+                {
+                    pedidosTotais[linhaPedido] = pedidoCSV;
+                    File.WriteAllLines(PATH, pedidosTotais);
+                }
+
+                return resultado;
+            }
+
             private string PrepararRegistroCSV(Pedido pedido)
             {
                 Cliente cliente = pedido.Cliente;
