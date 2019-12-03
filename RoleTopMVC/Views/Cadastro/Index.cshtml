@@ -1,0 +1,40 @@
+<main>
+    <div id="reserva">
+    <div class="cadastro">
+            <h2><u>Cadastro</u></h2>
+            <form method="POST" action='@Url.Action("CadastrarCliente", "Cadastro")'>
+                <div>
+                    <label for="nome">Nome Completo</label>
+                    <br>
+                    <input type="text" id="text" name="nome" required>
+                </div>
+                <div>
+                    <label for="cpf">CPF</label>
+                    <br>
+                    <input type="number" id="number" name="cpf" required>
+                </div>
+                <div>
+                    <label for="telefone">Telefone</label>
+                    <br>
+                    <input type="number" id="telefone" name="telefone">
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <br>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="password">Senha</label>
+                    <br>
+                    <input type="password" id="password" name="senha" required>
+                </div>
+                <div>
+                    <label for="confirmar_senha">Confirmar Senha</label>
+                    <br>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</main>

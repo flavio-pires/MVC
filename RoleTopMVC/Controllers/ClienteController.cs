@@ -1,18 +1,14 @@
 using System;
-using McBonaldsMVC.Enums;
-using McBonaldsMVC.Repositories;
-using McBonaldsMVC.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Repositories;
+using RoleTopMVC.ViewModels;
 
-namespace McBonaldsMVC.Controllers
+namespace RoleTopMVC.Controllers
 {
     public class ClienteController : AbstractController
     {
-        
         private ClienteRepository clienteRepository = new ClienteRepository();
-
-        private PedidoRepository pedidoRepository = new PedidoRepository();
 
         [HttpGet]
         public IActionResult Login()
@@ -44,21 +40,9 @@ namespace McBonaldsMVC.Controllers
             if (cliente != null)
             {
                 if(cliente.Senha.Equals(senha))
-                {
-                    switch (cliente.TipoUsuario)
-                    {
-                        case (uint) TiposUsuario.CLIENTE:
-                            HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
-                            HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                            HttpContext.Session.SetString(SESSION_TIPO_USUARIO, cliente.TipoUsuario.ToString());
-                            return RedirectToAction("Historico", "Cliente");
-
-                        default:
-                            HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
-                            HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                            HttpContext.Session.SetString(SESSION_TIPO_USUARIO, cliente.TipoUsuario.ToString());
-                            return RedirectToAction("Dashboard", "Administrador");
-                    }
+                {   HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
+                    HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                    return RedirectToAction("Index", "Cliente");
                 }
                 else
                 {
@@ -78,20 +62,6 @@ namespace McBonaldsMVC.Controllers
             }
             
         }
-    
-        public IActionResult Historico()
-        {
-            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
-            var pedidos = pedidoRepository.ObterTodosPorCliente(emailCliente);
-
-            return View(new HistoricoViewModel()
-            {
-                Pedidos = pedidos,
-                NomeView = "Historico",
-                UsuarioNome = ObterUsuarioNomeSession(),
-                UsuarioEmail = ObterUsuarioSession()
-            });
-        }
 
         public IActionResult Logoff()
         {
@@ -101,5 +71,6 @@ namespace McBonaldsMVC.Controllers
             return RedirectToAction("Index", "Home");
 
         }
+
     }
 }

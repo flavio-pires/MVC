@@ -1,3 +1,7 @@
-tipo_usuario=0;nome=Administrador;email=admin@email.com;senha=123123;endereco=;telefone=;data_nascimento=
+tipo_usuario=0;nome=Administrador;email=admin@email.com;senha=123123;endereco=blaBla;telefone=11 88888-8888;data_nascimento=25/12/2000 00:00:00
 tipo_usuario=1;nome=Flavio;email=flavio@email.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=23/11/1990 00:00:00
 tipo_usuario=1;nome=Matheus;email=matheus@gmail.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=20/11/2001 00:00:00
+tipo_usuario=0;nome=Hortelinha Safada;email=hortela@email.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=08/11/2000 00:00:00
+tipo_usuario=0;nome=Hortelinha Safada;email=hortela@email.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=01/12/2019 00:00:00
+tipo_usuario=0;nome=Hortelinha Safada;email=hortela@email.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=02/12/2019 00:00:00
+tipo_usuario=0;nome=Hortelinha Safada;email=hortela@email.com;senha=123456;endereco=blaBla;telefone=11 88888-8888;data_nascimento=13/11/2019 00:00:00

@@ -2961,6 +2961,11 @@
   "RootNamespace": "RoleTopMVC",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Shared\\Sucesso.cshtml",
+      "TargetPath": "Views\\Shared\\Sucesso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -2968,11 +2973,6 @@
     {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Servicos\\Trabalhos.cshtml",
       "TargetPath": "Views\\Servicos\\Trabalhos.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2991,6 +2991,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Cadastro\\Index.cshtml",
+      "TargetPath": "Views\\Cadastro\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -2998,6 +3003,11 @@
     {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Reserva\\Index.cshtml",
+      "TargetPath": "Views\\Reserva\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3018,6 +3028,16 @@
     {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Shared\\Erro.cshtml",
+      "TargetPath": "Views\\Shared\\Erro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Cliente\\Login.cshtml",
+      "TargetPath": "Views\\Cliente\\Login.cshtml",
       "FileKind": "mvc"
     }
   ],

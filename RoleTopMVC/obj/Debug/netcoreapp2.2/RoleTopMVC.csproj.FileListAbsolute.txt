@@ -52,7 +52,6 @@ C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\View
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Galeria\Fotos.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
-C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderHomePage.g.cshtml.cs
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -66,4 +65,7 @@ C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.pdb
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\RoleTopMVC.csproj.CopyComplete
 C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Servicos\Trabalhos.g.cshtml.cs
-C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Login\Index.g.cshtml.cs
+C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cadastro\Index.g.cshtml.cs
+C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Cliente\Login.g.cshtml.cs
+C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Erro.g.cshtml.cs
+C:\Users\39221000826\Documents\MVC\RoleTopMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Sucesso.g.cshtml.cs

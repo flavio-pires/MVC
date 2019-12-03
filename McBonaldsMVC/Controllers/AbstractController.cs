@@ -34,7 +34,7 @@ namespace McBonaldsMVC.Controllers
             }
         }
 
-        protected string ObterUsuarioTipoSession()
+        public string ObterUsuarioTipoSession()
         {
             var tipoUsuario = HttpContext.Session.GetString(SESSION_TIPO_USUARIO);
             if (!string.IsNullOrEmpty(tipoUsuario)) // se o campo do nome for diferente de nulo, retorna o nome do cliente

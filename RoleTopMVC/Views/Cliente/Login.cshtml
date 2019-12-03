@@ -1,0 +1,24 @@
+<main>
+        <div id="reserva">
+            <div class="login">
+                <h2><u>Login</u></h2>
+                <form method="POST" action='@Url.Action("Login", "Cliente")'>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <br>
+                        <input id="email" type="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Senha</label>
+                        <br>
+                        <input id="senha" type="password" name="senha" required>
+                    </div>
+                    <input type="submit" value="Entrar">
+
+                    <div id="link-cadastro">
+                        <a href='@Url.Action("Index", "Cadastro")'>Quero me cadastrar</a>
+                    </div>
+                </form>
+            </div>
+            
+    </main>
