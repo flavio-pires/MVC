@@ -9,10 +9,6 @@ namespace RoleTopMVC.Models
         public string Nome {get;set;}
         public int CPF {get;set;}
         public int Telefone {get;set;}
-        public string Nome_evento {get;set;}
-        public DateTime Data_evento {get;set;}
-        public int Quantidade {get;set;}
-        public string Servicos {get;set;}
         public uint TipoUsuario {get;set;}
 
 
@@ -21,17 +17,14 @@ namespace RoleTopMVC.Models
 
         }
 
-        public Cliente (string email, string senha, string nome, int cpf, int telefone, string nome_evento, DateTime data_evento, int quantidade, string servicos)
+        public Cliente (string email, string senha, string nome, int cpf, int telefone)
         {
             this.Email = email;
             this.Senha = senha;
             this.Nome = nome;
             this.CPF = cpf;
             this.Telefone = telefone;
-            this.Nome_evento = nome_evento;
-            this.Data_evento = data_evento;
-            this.Quantidade = quantidade;
-            this.Servicos = servicos;
+
         }
     }
 }

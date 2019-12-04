@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using RoleTopMVC.Models;
@@ -37,61 +38,56 @@ namespace RoleTopMVC.Repositories
                     reserva.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
                     reserva.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                     reserva.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
-                    reserva.Cliente.Endereco = ExtrairValorDoCampo("cliente_endereco", linha);
-                    reserva.Cliente.Telefone = ExtrairValorDoCampo("cliente_telefone", linha);
-                    reserva.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
-                    reserva.Hamburguer.Nome = ExtrairValorDoCampo("hamburguer_nome", linha);
-                    reserva.Hamburguer.Preco = double.Parse(ExtrairValorDoCampo("hamburguer_preco", linha));
-                    reserva.Shake.Nome = ExtrairValorDoCampo("shake_nome", linha);
-                    reserva.Shake.Preco = double.Parse(ExtrairValorDoCampo("shake_preco", linha));
-                    reserva.DataDoPedido = DateTime.Parse(ExtrairValorDoCampo("data_pedido", linha));
-                    reserva.PrecoTotal = double.Parse(ExtrairValorDoCampo("preco_total", linha));
+                    reserva.Nome_evento = ExtrairValorDoCampo("nome_evento", linha);
+                    reserva.Data_evento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
+                    reserva.Quantidade = int.Parse(ExtrairValorDoCampo("quantidade", linha));
+                    reserva.Servicos = ExtrairValorDoCampo("servicos", linha);
 
                     reservas.Add(reserva);
                 }
                 return reservas;
             }
 
-            public List<Pedido> ObterTodosPorCliente(string email)
+            public List<Reserva> ObterTodosPorCliente(string email)
             {
-                var pedidosTotais = ObterTodos();
-                List<Pedido> pedidosCliente = new List<Pedido>();
-                foreach (var pedido in pedidosTotais)
+                var reservasTotais = ObterTodos();
+                List<Reserva> reservasCliente = new List<Reserva>();
+                foreach (var reserva in reservasTotais)
                 {
-                    if(pedido.Cliente.Email.Equals(email))
+                    if(reserva.Cliente.Email.Equals(email))
                     {
-                        pedidosCliente.Add(pedido);
+                        reservasCliente.Add(reserva);
                     }
                 }
-                return pedidosCliente;
+                return reservasCliente;
             }
 
-            public Pedido ObterPor(ulong id) // método para obter o Id dos pedidos
+            public Reserva ObterPor(ulong id) // método para obter o Id dos pedidos
             {
-                var pedidosTotais = ObterTodos();
-                foreach (var pedido in pedidosTotais)
+                var reservasTotais = ObterTodos();
+                foreach (var reserva in reservasTotais)
                 {
-                    if(pedido.Id == id) //condição para o banco verificar se o Id do pedido do cliente, encontra-se na tabela, para depois retornar o pedido com o status de aprovado, reprovado
+                    if(reserva.Id == id) //condição para o banco verificar se o Id do pedido do cliente, encontra-se na tabela, para depois retornar o pedido com o status de aprovado, reprovado
                     {
-                        return pedido;
+                        return reserva;
                     }
                 }
                 return null;
             }
 
-            public bool Atualizar(ulong id, Pedido pedido)
+            public bool Atualizar(ulong id, Reserva reserva)
             {
-                var pedidosTotais = File.ReadAllLines(PATH); // recolhe tudo que esta na tabela de pedidos
-                var pedidoCSV = PrepararRegistroCSV(pedido); // transforma o pedido atualizado em string para ser gravado no CSV
-                var linhaPedido = -1; // porque não haverá linha -1.. serve apenas para atualizar
+                var reservasTotais = File.ReadAllLines(PATH); // recolhe tudo que esta na tabela de pedidos
+                var reservaCSV = PrepararRegistroCSV(reserva); // transforma o pedido atualizado em string para ser gravado no CSV
+                var linhaReserva = -1; // porque não haverá linha -1.. serve apenas para atualizar
                 var resultado = false;
 
-                for (int i=0; i < pedidosTotais.Length; i++)
+                for (int i=0; i < reservasTotais.Length; i++)
                 {
-                    var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", pedidosTotais[i]));
-                    if(pedido.Id.Equals(idConvertido))  // se o ID do pedido que foi enviado para atualizar for igual a linha com o ID igual ele vai atualizar o status
+                    var idConvertido = ulong.Parse(ExtrairValorDoCampo("id", reservasTotais[i]));
+                    if(reserva.Id.Equals(idConvertido))  // se o ID do pedido que foi enviado para atualizar for igual a linha com o ID igual ele vai atualizar o status
                     {
-                        linhaPedido = i;
+                        linhaReserva = i;
                         resultado = true;
                         break;
                     }
@@ -99,8 +95,8 @@ namespace RoleTopMVC.Repositories
 
                 if (resultado)
                 {
-                    pedidosTotais[linhaPedido] = pedidoCSV;
-                    File.WriteAllLines(PATH, pedidosTotais);
+                    reservasTotais[linhaReserva] = reservaCSV;
+                    File.WriteAllLines(PATH, reservasTotais);
                 }
 
                 return resultado;
@@ -109,7 +105,7 @@ namespace RoleTopMVC.Repositories
             private string PrepararRegistroCSV(Reserva reserva)
             {
                 Cliente cliente = reserva.Cliente;
-                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};cliente_endereco={cliente.Endereco};cliente_telefone={cliente.Telefone};cliente_email={cliente.Email};hamburguer_nome={hamburguer.Nome};hamburguer_preco={hamburguer.Preco};shake_nome={shake.Nome};shake_preco={shake.Preco};data_pedido={pedido.DataDoPedido};preco_total={pedido.PrecoTotal}";
+                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};nome_evento={reserva.Nome_evento};data_evento={reserva.Data_evento};quantidade={reserva.Quantidade};servicos={reserva.Servicos}";
             }
 
     }

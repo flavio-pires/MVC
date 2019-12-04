@@ -4,7 +4,7 @@ using RoleTopMVC.Models;
 
 namespace RoleTopMVC.Repositories
 {
-    public class ClienteRepository
+    public class ClienteRepository : RepositoryBase
     {
         private const string PATH = "Database/Cliente.csv";
         public ClienteRepository()
@@ -36,10 +36,7 @@ namespace RoleTopMVC.Repositories
                     c.Nome = ExtrairValorDoCampo("nome", linha);
                     c.CPF = int.Parse(ExtrairValorDoCampo("cpf", linha));
                     c.Telefone = int.Parse(ExtrairValorDoCampo("telefone", linha));
-                    c.Nome_evento = ExtrairValorDoCampo("nome_evento", linha);
-                    c.Data_evento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
-                    c.Quantidade = int.Parse(ExtrairValorDoCampo("quantidade", linha));
-                    c.Servicos = ExtrairValorDoCampo("servicos", linha);
+                    c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", linha));
 
                     return c;
                 }
@@ -50,29 +47,8 @@ namespace RoleTopMVC.Repositories
 
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"email={cliente.Email};senha={cliente.Senha};nome={cliente.Nome};cpf={cliente.CPF};telefone={cliente.Telefone};nome_evento={cliente.Nome_evento};data_evento={cliente.Data_evento};quantidade={cliente.Quantidade};servicos={cliente.Servicos}";
+            return $"tipo_usuario={cliente.TipoUsuario};email={cliente.Email};senha={cliente.Senha};nome={cliente.Nome};cpf={cliente.CPF};telefone={cliente.Telefone}";
         }
-
-        public string ExtrairValorDoCampo(string nomeCampo, string linha)
-            {
-                var chave = nomeCampo;
-                var indiceChave = linha.IndexOf(chave); //Indexof encontra a posição da chave que foi indicada, no caso "email"
-                var indiceTerminal = linha.IndexOf(";",indiceChave);
-                var valor = "";
-
-                if(indiceTerminal != -1)
-                {
-                    valor = linha.Substring(indiceChave, indiceTerminal - indiceChave); //ignora a chave e pega o valor de string depois dela
-                }
-                else
-                {
-                    valor = linha.Substring(indiceChave);
-                }
-
-                System.Console.WriteLine($"Campo {nomeCampo} tem valor {valor}");
-                return valor.Replace(nomeCampo + "=", "");
-            }
-
 
     }
 }

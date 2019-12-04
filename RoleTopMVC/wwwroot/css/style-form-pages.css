@@ -1,3 +1,16 @@
+html {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    height: 100%;
+}
+
+main {
+    align-self: center;    
+}
+
 #reserva {
     padding: 7em;
     display: flex;
@@ -99,4 +112,11 @@ form input[type="submit"]:hover {
     box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     font-weight: bolder;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }

@@ -24,7 +24,7 @@ namespace RoleTopMVC.Controllers
         {
             ViewData["Action"] = "Cadastro";
             try{
-                Cliente cliente = new Cliente(form["email"], form["senha"], form["nome"], int.Parse(form["cpf"]), int.Parse(form["telefone"]), form["nome_evento"], DateTime.Parse(form["data_evento"]), int.Parse(form["quantidade"]), form["servicos"]);
+                Cliente cliente = new Cliente(form["email"], form["senha"], form["nome"], int.Parse(form["cpf"]), int.Parse(form["telefone"]));
 
                 clienteRepositorio.Inserir(cliente);
 
