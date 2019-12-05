@@ -18,12 +18,7 @@ main {
     justify-content: space-around;
 }
 
-.login h2 {
-    color: #7d0093;
-    font-size: 2em;
-}
-
-.cadastro h2 {
+h2 {
     color: #7d0093;
     font-size: 2em;
 }
@@ -119,4 +114,10 @@ form input[type="submit"]:hover {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+@media (max-width: 800px) {
+    main {
+        width:70%;
+    }
 }

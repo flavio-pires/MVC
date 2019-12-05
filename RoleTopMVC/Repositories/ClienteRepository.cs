@@ -34,8 +34,8 @@ namespace RoleTopMVC.Repositories
                     c.Email = ExtrairValorDoCampo("email", linha);
                     c.Senha = ExtrairValorDoCampo("senha", linha);
                     c.Nome = ExtrairValorDoCampo("nome", linha);
-                    c.CPF = int.Parse(ExtrairValorDoCampo("cpf", linha));
-                    c.Telefone = int.Parse(ExtrairValorDoCampo("telefone", linha));
+                    c.CPF = ulong.Parse(ExtrairValorDoCampo("cpf", linha));
+                    c.Telefone = ulong.Parse(ExtrairValorDoCampo("telefone", linha));
                     c.TipoUsuario = uint.Parse(ExtrairValorDoCampo("tipo_usuario", linha));
 
                     return c;
@@ -47,7 +47,7 @@ namespace RoleTopMVC.Repositories
 
         private string PrepararRegistroCSV(Cliente cliente)
         {
-            return $"tipo_usuario={cliente.TipoUsuario};email={cliente.Email};senha={cliente.Senha};nome={cliente.Nome};cpf={cliente.CPF};telefone={cliente.Telefone}";
+            return $"tipo_usuario={cliente.TipoUsuario};nome={cliente.Nome};email={cliente.Email};senha={cliente.Senha};cpf={cliente.CPF};telefone={cliente.Telefone}";
         }
 
     }

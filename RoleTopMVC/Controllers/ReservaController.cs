@@ -17,11 +17,6 @@ namespace RoleTopMVC.Controllers
             ReservaViewModel reserva = new ReservaViewModel();
 
             var usuarioLogado = ObterUsuarioSession();
-            var nomeUsuarioLogado = ObterUsuarioNomeSession();
-            if (!string.IsNullOrEmpty(nomeUsuarioLogado))
-            {
-            reserva.NomeUsuario = nomeUsuarioLogado;
-            }
 
             var clienteLogado = clienteRepository.ObterPor(usuarioLogado);
             if(clienteLogado != null)
@@ -36,7 +31,7 @@ namespace RoleTopMVC.Controllers
         }
         
         public IActionResult Solicitar (IFormCollection form) {
-            ViewData["Action"] = "Pedido";
+            ViewData["Action"] = "Reserva";
             Reserva reserva = new Reserva ();
 
             Cliente cliente = new Cliente () {
@@ -50,7 +45,7 @@ namespace RoleTopMVC.Controllers
             if (reservaRepository.Inserir (reserva)) {
                 return View ("Sucesso", new RespostaViewModel()
                 {
-                    Mensagem = "Aguarde aprovação dos nossos administradores",
+                    Mensagem = "Aguarde aprovação dos nossos administradores!",
                     NomeView = "Sucesso",
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()
@@ -58,7 +53,7 @@ namespace RoleTopMVC.Controllers
             } else {
                 return View ("Erro", new RespostaViewModel()
                 {
-                    Mensagem = "Houve um erro ao processsar seu pedido. Tente novamente!",
+                    Mensagem = "Houve um erro ao processsar seu agendamento. Tente novamente!",
                     NomeView = "Erro",
                     UsuarioEmail = ObterUsuarioSession(),
                     UsuarioNome = ObterUsuarioNomeSession()

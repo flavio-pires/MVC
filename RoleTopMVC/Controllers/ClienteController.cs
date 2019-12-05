@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RoleTopMVC.Enums;
 using RoleTopMVC.Repositories;
 using RoleTopMVC.ViewModels;
 
@@ -9,6 +10,8 @@ namespace RoleTopMVC.Controllers
     public class ClienteController : AbstractController
     {
         private ClienteRepository clienteRepository = new ClienteRepository();
+
+        private ReservaRepository reservaRepository = new ReservaRepository();
 
         [HttpGet]
         public IActionResult Login()
@@ -27,10 +30,8 @@ namespace RoleTopMVC.Controllers
             ViewData["Action"]="Login";
             try
             {
-            System.Console.WriteLine("==========================");
             System.Console.WriteLine(form["email"]);
             System.Console.WriteLine(form["senha"]);
-            System.Console.WriteLine("==========================");
 
             var usuario = form["email"];
             var senha = form["senha"];
@@ -40,9 +41,21 @@ namespace RoleTopMVC.Controllers
             if (cliente != null)
             {
                 if(cliente.Senha.Equals(senha))
-                {   HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
-                    HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
-                    return RedirectToAction("Index", "Cliente");
+                {
+                    switch (cliente.TipoUsuario)
+                    {
+                        case (uint) TiposUsuario.CLIENTE:
+                            HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
+                            HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                            HttpContext.Session.SetString(SESSION_TIPO_USUARIO, cliente.TipoUsuario.ToString());
+                            return RedirectToAction("Historico", "Cliente");
+
+                        default:
+                            HttpContext.Session.SetString(SESSION_CLIENTE_EMAIL, usuario); //SetString guarda uma string e armazena  na session email
+                            HttpContext.Session.SetString(SESSION_CLIENTE_NOME, cliente.Nome);
+                            HttpContext.Session.SetString(SESSION_TIPO_USUARIO, cliente.TipoUsuario.ToString());
+                            return RedirectToAction("Dashboard", "Administrador");
+                    }
                 }
                 else
                 {
@@ -61,6 +74,19 @@ namespace RoleTopMVC.Controllers
                 return View("Erro");
             }
             
+        }
+        public IActionResult Historico()
+        {
+            var emailCliente = HttpContext.Session.GetString(SESSION_CLIENTE_EMAIL);
+            var reservas = reservaRepository.ObterTodosPorCliente(emailCliente);
+
+            return View(new HistoricoViewModel()
+            {
+                Reservas = reservas,
+                NomeView = "Historico",
+                UsuarioNome = ObterUsuarioNomeSession(),
+                UsuarioEmail = ObterUsuarioSession()
+            });
         }
 
         public IActionResult Logoff()

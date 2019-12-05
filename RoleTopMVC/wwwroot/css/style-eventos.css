@@ -10,7 +10,6 @@ body {
 main {
     width: 100%;
     align-self: center;
-    padding: 8em;
     height: 100%;
     background-image: url(../img/fundo-eventos.jpg);
     background-repeat: no-repeat;
@@ -28,6 +27,7 @@ main {
 
 .eventos {
     color: #fff;
+    padding: 9em 0 0 0;
 }
 
 .evento1 {
@@ -44,4 +44,3 @@ main {
     padding: 1.2em;
     font-size: 1.3em;
 }
-

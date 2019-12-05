@@ -1,2 +1,2 @@
-tipo_usuario=0;email=flavio@email.com;senha=452345;nome=Flavio;cpf=285744;telefone=2452
-tipo_usuario=0;email=flavio@email.com;senha=132;nome=Flavio;cpf=789;telefone=789
+tipo_usuario=1;email=admin@email.com;senha=123123;nome=Administrador;cpf=;telefone=
+tipo_usuario=0;nome=Flavio Pires;email=flavio@email.com;senha=123456;cpf=98765432100;telefone=11988776655

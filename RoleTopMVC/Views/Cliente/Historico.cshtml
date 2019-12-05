@@ -1,0 +1,27 @@
+@model RoleTopMVC.ViewModels.HistoricoViewModel
+@{
+    ViewData["H2"] = "Histórico de Eventos";
+}
+
+<main>
+    <h2>@ViewData["H2"]</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Data do Evento</th>
+                <th>Nome do Evento</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach( var reserva in Model.Reservas ) {
+                <tr>
+                    <td>@reserva.Data_evento</td>
+                    <td>@reserva.Nome_evento</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href='@Url.Action("Index", "Reserva")'>Faça seu evento. Clique e agende!</a>
+
+</main>

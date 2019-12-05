@@ -24,15 +24,15 @@ namespace RoleTopMVC.Controllers
         {
             ViewData["Action"] = "Cadastro";
             try{
-                Cliente cliente = new Cliente(form["email"], form["senha"], form["nome"], int.Parse(form["cpf"]), int.Parse(form["telefone"]));
+                Cliente cliente = new Cliente(form["email"], form["senha"], form["nome"], ulong.Parse(form["cpf"]), ulong.Parse(form["telefone"]));
 
                 clienteRepositorio.Inserir(cliente);
 
-            return View("Sucesso", new RespostaViewModel("Cadastro efetuado com sucesso"));
+            return View("Sucesso", new RespostaViewModel("Cadastro efetuado com sucesso!"));
             } catch(Exception e)
             {
                 System.Console.WriteLine(e.StackTrace);
-                return View("Erro", new RespostaViewModel("Erro no cadastro"));          
+                return View("Erro", new RespostaViewModel("Erro no cadastro. Tente novamente!"));          
             }
             
         }

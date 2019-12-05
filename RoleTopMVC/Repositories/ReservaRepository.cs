@@ -105,7 +105,7 @@ namespace RoleTopMVC.Repositories
             private string PrepararRegistroCSV(Reserva reserva)
             {
                 Cliente cliente = reserva.Cliente;
-                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};nome_evento={reserva.Nome_evento};data_evento={reserva.Data_evento};quantidade={reserva.Quantidade};servicos={reserva.Servicos}";
+                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};nome_evento={reserva.Nome_evento};quantidade={reserva.Quantidade};servicos={reserva.Servicos};data_evento={reserva.Data_evento}";
             }
 
     }

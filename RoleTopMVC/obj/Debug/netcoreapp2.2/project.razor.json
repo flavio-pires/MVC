@@ -2976,6 +2976,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Cliente\\Historico.cshtml",
+      "TargetPath": "Views\\Cliente\\Historico.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\39221000826\\Documents\\MVC\\RoleTopMVC\\Views\\Eventos\\Shows.cshtml",
       "TargetPath": "Views\\Eventos\\Shows.cshtml",
       "FileKind": "mvc"
