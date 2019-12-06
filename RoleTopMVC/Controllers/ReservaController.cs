@@ -40,7 +40,7 @@ namespace RoleTopMVC.Controllers
 
             reserva.Cliente = cliente;
 
-            reserva.Data_evento = DateTime.Now;
+            reserva.Data_evento = DateTime.Parse(form["data_evento"]);
 
             if (reservaRepository.Inserir (reserva)) {
                 return View ("Sucesso", new RespostaViewModel()
