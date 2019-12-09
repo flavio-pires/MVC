@@ -1,1 +1,1 @@
-id=1;status_pedido=0;cliente_nome=Flavio Pires;nome_evento=;quantidade=0;servicos=;data_evento=28/12/2019 00:00:00
+id=1;status_pedido=0;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Festa;quantidade=300;servicos=Som;tipo_evento=publico;pagamento=boleto;data_evento=19/12/2019 00:00:00

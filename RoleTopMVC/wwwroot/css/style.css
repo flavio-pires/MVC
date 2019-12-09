@@ -383,7 +383,7 @@ address {
 
 table {
     text-align: center;
-    color: #fff;
+    color: #7d0093;
     border: 1px dashed #7d0093;
     width: 100%;
     padding: 5px;
@@ -417,4 +417,75 @@ thead > tr:first-child > th:last-child {
 .mensagem {
     color: rgb(0, 0, 0);
     font-weight: bold;
+}
+
+form input[type="submit"] {
+    background-color: #7d0093;
+    border: 1px solid #7d0093;
+    color: #fff;
+    margin: 20px auto;
+    height: 2em;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ffc600;
+    color: black;
+    border: 1px solid #ffc600;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.cadastro {
+    width: 400px;
+    
+}
+
+.cadastro input {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 20px;
+}
+
+.cadastro label {
+    padding-top: 1em;
+    display: block;
+    font-size: 1.2em;
+}
+
+.cadastro[type="checkbox"] {
+    font-size: 3em;
+}
+
+form input[type="submit"] {
+    background-color: #7d0093;
+    border: 1px solid #7d0093;
+    color: #fff;
+    margin: 20px auto;
+    height: 2em;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ffc600;
+    color: black;
+    border: 1px solid #ffc600;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }

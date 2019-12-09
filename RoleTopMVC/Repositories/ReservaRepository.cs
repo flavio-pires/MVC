@@ -38,10 +38,13 @@ namespace RoleTopMVC.Repositories
                     reserva.Id = ulong.Parse(ExtrairValorDoCampo("id", linha));
                     reserva.Status = uint.Parse(ExtrairValorDoCampo("status_pedido", linha));
                     reserva.Cliente.Nome = ExtrairValorDoCampo("cliente_nome", linha);
+                    reserva.Cliente.Email = ExtrairValorDoCampo("cliente_email", linha);
                     reserva.Nome_evento = ExtrairValorDoCampo("nome_evento", linha);
                     reserva.Data_evento = DateTime.Parse(ExtrairValorDoCampo("data_evento", linha));
                     reserva.Quantidade = int.Parse(ExtrairValorDoCampo("quantidade", linha));
                     reserva.Servicos = ExtrairValorDoCampo("servicos", linha);
+                    reserva.Tipo_evento = ExtrairValorDoCampo("tipo_evento", linha);
+                    reserva.Pagamento = ExtrairValorDoCampo("pagamento", linha);
 
                     reservas.Add(reserva);
                 }
@@ -105,7 +108,7 @@ namespace RoleTopMVC.Repositories
             private string PrepararRegistroCSV(Reserva reserva)
             {
                 Cliente cliente = reserva.Cliente;
-                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};nome_evento={reserva.Nome_evento};quantidade={reserva.Quantidade};servicos={reserva.Servicos};data_evento={reserva.Data_evento}";
+                return $"id={reserva.Id};status_pedido={reserva.Status};cliente_nome={cliente.Nome};cliente_email={cliente.Email};nome_evento={reserva.Nome_evento};quantidade={reserva.Quantidade};servicos={reserva.Servicos};tipo_evento={reserva.Tipo_evento};pagamento={reserva.Pagamento};data_evento={reserva.Data_evento}";
             }
 
     }

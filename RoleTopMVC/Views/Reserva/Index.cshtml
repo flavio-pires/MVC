@@ -8,6 +8,11 @@
             <input type="text" id="nome" name="nome">
         </div>
         <div>
+            <label for="email">E-mail</label>
+            <br>
+            <input id="email" type="email" name="email">
+        </div>
+        <div>
             <label for="nome_evento">Nome do Evento</label>
             <br>
             <input type="text" id="nome_evento" name="nome_evento">
@@ -25,14 +30,21 @@
         <div>
             <label for="tipo_evento">Tipo de Evento</label>
             <br>
-            <input type="checkbox" value="publico" name="publico"> Público
-            <input type="checkbox" value="privado" name="privado"> Privado
+            <select name="tipo_evento" required>
+                <option value="selecione" disabled selected>Selecione</option>
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+            </select>
         </div><br>
         <div>
-            <label for="servicos">Serviços</label>
+            <label for="servicos" value="servicos">Contratar Serviço</label>
             <br>
-            <input type="checkbox" value="iluminacao" name="iluminacao"> Contratar serviço de iluminação
-            <input type="checkbox" value="som" name="som"> Contratar serviço de som
+            <select name="servicos" required>
+                <option value="selecione" disabled selected>Selecione</option>
+                <option>Som</option>
+                <option>Iluminação</option>
+                <option>Som e Iluminação</option>
+            </select>
         </div><br>
         <div>
             <label for="descrição">Descrição do evento / Observações</label>
@@ -40,11 +52,14 @@
             <input type="area" id="descrição">
         </div><br>
         <div id="pagamento">
-            <p><u>Formas de Pagamento</u></p>
+            <label for="pagamento">Formas de Pagamento</label>
             <br>
-            <p>Cartão de Crédito</p>
-            <p>Boleto Bancário</p>
-            <p>Transferência</p>
+            <select name="pagamento" required>
+                <option value="selecione" disabled selected>Selecione</option>
+                <option value="cartao">Cartão de Crédito</option>
+                <option value="boleto">Boleto Bancário</option>
+                <option value="transfer">Transferência Bancária</option>
+            </select>
         </div><br>
         <div>
             <input type="checkbox" value="termos"> Aceito os termos e condições de uso

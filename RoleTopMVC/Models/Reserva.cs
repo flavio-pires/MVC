@@ -12,6 +12,8 @@ namespace RoleTopMVC.Models
         public DateTime Data_evento {get;set;}
         public int Quantidade {get;set;}
         public string Servicos {get;set;}
+        public string Tipo_evento {get;set;}
+        public string Pagamento {get;set;}
 
         public Reserva()
         {

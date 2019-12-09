@@ -36,10 +36,15 @@ namespace RoleTopMVC.Controllers
 
             Cliente cliente = new Cliente () {
                 Nome = form["nome"],
+                Email = form["email"]
             };
 
             reserva.Cliente = cliente;
-
+            reserva.Nome_evento = form["nome_evento"];
+            reserva.Quantidade = int.Parse(form["quantidade"]);
+            reserva.Servicos = form["servicos"];
+            reserva.Tipo_evento = form["tipo_evento"];
+            reserva.Pagamento = form["pagamento"];
             reserva.Data_evento = DateTime.Parse(form["data_evento"]);
 
             if (reservaRepository.Inserir (reserva)) {
