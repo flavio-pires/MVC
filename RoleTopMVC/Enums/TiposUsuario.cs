@@ -2,7 +2,7 @@ namespace RoleTopMVC.Enums
 {
     public enum TiposUsuario : uint
     {
-        CLIENTE = 0,
-        ADMINISTRADOR = 1
+        ADMINISTRADOR = 1,
+        CLIENTE = 0
     }
 }

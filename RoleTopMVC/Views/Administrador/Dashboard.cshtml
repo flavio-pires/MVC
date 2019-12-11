@@ -1,0 +1,65 @@
+@model RoleTopMVC.ViewModels.DashboardViewModel
+    <main>
+        <h2>Dashboard</h2>
+        <section id="status-pedidos">
+            <h3 id= dash>Status dos pedidos</h3>
+            <div id="painel">
+                <div class="box-status-pedidos aprovados">
+                    <h4>Aprovados</h4>
+                    <p>@Model.PedidosAprovados</p>
+                </div>
+                <div class="box-status-pedidos pendentes">
+                    <h4>Pendentes</h4>
+                    <p>@Model.PedidosPendentes</p>
+                </div>
+                <div class="box-status-pedidos reprovados">
+                    <h4>Reprovados</h4>
+                    <p>@Model.PedidosReprovados</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lista-pedidos">
+            <h3 id=dash>Lista de agendamentos</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Nome</th>
+                        <th rowspan="2">Evento</th>
+                        <th rowspan="2">Tipo do Evento</th>
+                        <th rowspan="2">Serviços</th>
+                        <th rowspan="2">Forma de pagamento</th>
+                        <th rowspan="2">Data do evento</th>
+                        <th colspan="2" rowspan="2">Aprovar</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <p>Pedidos atualizados em @DateTime.Now</p>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach(var pedido in Model.Reservas )
+                    {
+                        <tr>
+                            <td>@pedido.Cliente.Nome</td>
+                            <td>@pedido.Nome_evento</td>
+                            <td>@pedido.Tipo_evento</td>
+                            <td>@pedido.Servicos</td>
+                            <td>@pedido.Pagamento</td>
+                            <td>@pedido.Data_evento</td>
+                            <td><a href='@Url.Action("Aprovar", "Reserva", new {id = @pedido.Id})'><i class="fas fa-check"></i></a></td>
+                            <td><a href='@Url.Action("Reprovar", "Reserva", new {id = @pedido.Id})'><i class="fas fa-times"></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+    </main>

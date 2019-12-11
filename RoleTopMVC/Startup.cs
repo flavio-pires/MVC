@@ -36,7 +36,7 @@ namespace RoleTopMVC
 
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(15);
+                options.IdleTimeout = TimeSpan.FromSeconds(60);
                 options.Cookie.IsEssential = true;
             }
 

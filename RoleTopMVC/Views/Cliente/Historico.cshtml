@@ -10,6 +10,8 @@
             <tr>
                 <th>Data do Evento</th>
                 <th>Nome do Evento</th>
+                <th>Tipo do Evento</th>
+                <th>Serviço(s) Contratado(s)</th>
             </tr>
         </thead>
         <tbody>
@@ -17,11 +19,13 @@
                 <tr>
                     <td>@reserva.Data_evento</td>
                     <td>@reserva.Nome_evento</td>
+                    <td>@reserva.Tipo_evento</td>
+                    <td>@reserva.Servicos</td>
                 </tr>
             }
         </tbody>
     </table>
-
+    <br>
     <a href='@Url.Action("Index", "Reserva")'>Faça seu evento. Clique e agende!</a>
 
 </main>

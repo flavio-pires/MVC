@@ -1,1 +1,10 @@
-id=1;status_pedido=0;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Festa;quantidade=300;servicos=Som;tipo_evento=publico;pagamento=boleto;data_evento=19/12/2019 00:00:00
+id=1;status_pedido=1;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Festa;quantidade=300;servicos=Som;tipo_evento=publico;pagamento=boleto;data_evento=19/12/2019 00:00:00
+id=2;status_pedido=2;cliente_nome=Henrique;cliente_email=henrique@email.com;nome_evento=Festa Gay;quantidade=50;servicos=Som e Iluminação;tipo_evento=publico;pagamento=boleto;data_evento=14/12/2019 00:00:00
+id=3;status_pedido=1;cliente_nome=Thais Froes;cliente_email=tais@hotmail.com;nome_evento=Rave;quantidade=200;servicos=Som e Iluminação;tipo_evento=Privado;pagamento=cartao;data_evento=14/12/2019 00:00:00
+id=4;status_pedido=2;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Show;quantidade=300;servicos=Som e Iluminação;tipo_evento=Público;pagamento=Cartão de Crédito;data_evento=15/12/2019 00:00:00
+id=5;status_pedido=1;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Rave;quantidade=200;servicos=Som e Iluminação;tipo_evento=Público;pagamento=Transferência Bancária;data_evento=13/12/2019 00:00:00
+id=6;status_pedido=1;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Festa;quantidade=600;servicos=Som;tipo_evento=Público;pagamento=Cartão de Crédito;data_evento=19/12/2019 00:00:00
+id=7;status_pedido=2;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Show;quantidade=1000;servicos=Iluminação;tipo_evento=Privado;pagamento=Boleto Bancário;data_evento=29/12/2019 00:00:00
+id=8;status_pedido=1;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Rave;quantidade=500;servicos=Som;tipo_evento=Privado;pagamento=Cartão de Crédito;data_evento=30/12/2019 00:00:00
+id=9;status_pedido=0;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Festa;quantidade=200220;servicos=Som;tipo_evento=Privado;pagamento=Cartão de Crédito;data_evento=10/12/2019 00:00:00
+id=10;status_pedido=0;cliente_nome=Flavio Pires;cliente_email=flavio@email.com;nome_evento=Aniversário;quantidade=4524;servicos=Iluminação;tipo_evento=Público;pagamento=Cartão de Crédito;data_evento=17/12/2019 00:00:00

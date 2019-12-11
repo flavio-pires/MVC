@@ -1,16 +1,17 @@
 <main>
     <div id="reserva">
+        <div class="cadastro">
         <form method="POST" action='@Url.Action("Solicitar","Reserva")'>
         <h2><u>Faça sua reserva</u></h2>
         <div>
             <label for="nome">Nome Completo</label>
             <br>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" value="@Model.Cliente.Nome">
         </div>
         <div>
             <label for="email">E-mail</label>
             <br>
-            <input id="email" type="email" name="email">
+            <input id="email" type="email" name="email" value="@Model.Cliente.Email">
         </div>
         <div>
             <label for="nome_evento">Nome do Evento</label>
@@ -32,8 +33,8 @@
             <br>
             <select name="tipo_evento" required>
                 <option value="selecione" disabled selected>Selecione</option>
-                <option value="publico">Público</option>
-                <option value="privado">Privado</option>
+                <option>Público</option>
+                <option>Privado</option>
             </select>
         </div><br>
         <div>
@@ -56,9 +57,9 @@
             <br>
             <select name="pagamento" required>
                 <option value="selecione" disabled selected>Selecione</option>
-                <option value="cartao">Cartão de Crédito</option>
-                <option value="boleto">Boleto Bancário</option>
-                <option value="transfer">Transferência Bancária</option>
+                <option>Cartão de Crédito</option>
+                <option>Boleto Bancário</option>
+                <option>Transferência Bancária</option>
             </select>
         </div><br>
         <div>
@@ -67,5 +68,6 @@
         <p>Valor inicial do aluguel do espaço - R$ 10.000,00</p><br>
         <input type="submit" value="Enviar" />
         </form>
+        </div>
     </div>
 </main>
